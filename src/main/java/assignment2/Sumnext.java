@@ -7,12 +7,20 @@ public class Sumnext {
 		System.out.println("Enter any integer number");
 		Scanner in = new Scanner(System.in);
 		int num = in.nextInt();
-		for (int i=0;i<=100;i++) {
+		int num3=0;
+		int num4=0;
+		
+		for (int i=1;i<=100;i++) {
 			
-		int num1=num;
-			System.out.println(num1);
+		
+		num3=num3+num;
+		 num4=num3;
+		 
+		 num++;
+		 
 			
 		}
+		System.out.println(num4);
 		
 		
 
