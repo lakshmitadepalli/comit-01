@@ -9,9 +9,11 @@ import java.util.Scanner;
  * - Save the new salaries in the arrangement - 
  * Calculate the payroll - Print the salaries from the settlement
  */
-class EmpSalary{
-	String ename;
-	double salary;
+class EmpSalary1{
+	 String ename;
+	 double salary;
+	 double salary1;
+	
 	public String getEname() {
 		return ename;
 	}
@@ -24,13 +26,15 @@ class EmpSalary{
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	double updatesalary() {
+	 double updatesalary() {
 		if(salary<=1000) {
-			salary=salary+(salary*0.15);
-			return salary;
+			salary1=(salary)*15/100;
+			salary=salary1+salary;
+			return (salary);
 		}else {
-			salary=salary+(salary*0.12);
-			return salary;
+			salary1=(salary)*12/100;
+			salary=salary1+salary;
+			return (salary);
 		}
 	}
 	
@@ -40,10 +44,30 @@ class EmpSalary{
 public class EmpSettlement {
 
 	public static void main(String[] args) {
+		EmpSalary1 obj=new EmpSalary1();
+		
+		
 		Scanner scan=new Scanner(System.in);
 		System.out.println("enter the no. employees in your company");
 		int empno=scan.nextInt();
 		
+		for(int i=0;i< empno;i++) {
+			scan.nextLine();
+			System.out.println("Enter employee"+(i+1)+"name");
+			String ename=scan.nextLine();
+			
+			System.out.println("Enter employee "+ (i+1) + "  "+"salary :");
+			double salary=scan.nextDouble();
+			obj.setEname(ename);
+			obj.setSalary(salary);
+			
+			double payroll=obj.updatesalary();
+			System.out.println("The new payroll is:"+payroll);
+			
+			
+		}
+		
+		scan.close();
 		
 		
 

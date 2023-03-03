@@ -20,13 +20,14 @@ At the end, we show the password and whether or not it is strong (use the previo
 password2 boolean_value2*/
 
  class Password{
-	int length;
-	String password;
-	String capitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-  
-    String numbers = "1234567890";
-    String combinedChars = capitalCaseLetters + lowerCaseLetters + numbers;
+	static int length;
+	static String password;
+	int count=0;
+	int a=0;
+	int b=0;
+	
+	
+	char c;
 	
 	public int getLength() {
 		return length;
@@ -47,18 +48,43 @@ password2 boolean_value2*/
 		this.length=length;
 		
 	}
-	boolean isStrong() {
-		if(password.equals(capitalCaseLetters.length()==2 && lowerCaseLetters.length()==1 && numbers.length()==5 )) {
-		return true;
-		}else {
-			return false;
+	void isStrong() {
+		
+		for (int i=0;i<password.length();i++) {
+			boolean result;
+			
+			c=password.charAt(i);
+			if(Character.isDigit(c)){
+				
+				count++;
+				
+			
+			}else if(Character.isUpperCase(c)) {
+				
+				a++;
+			} else if (Character.isLowerCase(c)) {
+				
+				b++;
+			}
+		
+			if( count==1&&a==2 &&b==1) {
+				result=true;
+				System.out.println("True");}
+			else result= false;
+					System.out.println("false");
+			
 		}
+		
+		
+		
+		
 	}
 	
 	String generatePassword() {
 		
 		char a;
 		password="";
+		
 		for (int i=0;i<length;i++) {
 			int rand=(int)(Math.random()*62);
 		if(rand<=9) {
@@ -74,8 +100,11 @@ password2 boolean_value2*/
 		
 			password=password +a;
 			
+		
+
 		}
 		return password;
+		
 		
 	}
 		
@@ -85,22 +114,32 @@ password2 boolean_value2*/
 public class ExecutePassword {
 
 	public static void main(String[] args) {
-		boolean value;
+		boolean[] result=new boolean[4];
 		
 		Password obj1=new Password();
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the length of the password");
 		int length=scan.nextInt();
 		String[] password=new String[4];
+		obj1.setLength(length);
+		obj1.setPassword(null);
+		
 		
 		for (int i=0;i<4;i++) {
+			
 			password[i]=obj1.generatePassword();
-			System.out.println(Arrays.toString(password));
-			value=obj1.isStrong();
-			System.out.println(value);
+			obj1.isStrong();
+						
 			
+		 }
+		
+		System.out.println(Arrays.toString(password));
+		//System.out.println(obj1.isStrong());
+		
 			
-		}
+		scan.close();	
+		
+		
 		
 		
 		
