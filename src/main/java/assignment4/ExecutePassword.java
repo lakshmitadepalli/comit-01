@@ -19,15 +19,16 @@ Create another array of booleans where we store if the password of the password 
 At the end, we show the password and whether or not it is strong (use the previous loop). Use this simple format: password1 boolean_value1
 password2 boolean_value2*/
 
- class Password{
+class Password{
 	static int length;
 	static String password;
-	int count=0;
-	int a=0;
-	int b=0;
+	
+	static String uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	static String lowercase="abcdefghijklmnopqrstuvwxyz";
+	static String digits="0123456789";
 	
 	
-	char c;
+	
 	
 	public int getLength() {
 		return length;
@@ -50,35 +51,18 @@ password2 boolean_value2*/
 	}
 	void isStrong() {
 		
-		for (int i=0;i<password.length();i++) {
-			boolean result;
+	
 			
-			c=password.charAt(i);
-			if(Character.isDigit(c)){
-				
-				count++;
-				
+		if((password).equals((uppercase.length()==2)&&(lowercase.length()==1)&&(digits.length()==1))){
+				System.out.println("true");
+			}else {
+				System.out.println("false");
 			
-			}else if(Character.isUpperCase(c)) {
-				
-				a++;
-			} else if (Character.isLowerCase(c)) {
-				
-				b++;
 			}
 		
-			if( count==1&&a==2 &&b==1) {
-				result=true;
-				System.out.println("True");}
-			else result= false;
-					System.out.println("false");
-			
+	
+		
 		}
-		
-		
-		
-		
-	}
 	
 	String generatePassword() {
 		
@@ -134,7 +118,9 @@ public class ExecutePassword {
 		 }
 		
 		System.out.println(Arrays.toString(password));
-		//System.out.println(obj1.isStrong());
+		//System.out.println(Arrays.toString(result));
+		//obj1.isStrong();
+		
 		
 			
 		scan.close();	
