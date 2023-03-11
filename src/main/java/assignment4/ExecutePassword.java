@@ -50,15 +50,26 @@ class Password{
 		
 	}
 	void isStrong() {
-		
-	
+		int countUpper=0,countLower=0,CountDigits=0;
+		for (int i=0;i<password.length();i++) {
+			char c=password.charAt(i);
+			if(uppercase.indexOf(c)!=-1) {
+				countUpper++;
+			}else if((lowercase.indexOf(c))!=-1) {
+				countLower++;
 			
-		if((password).equals((uppercase.length()==2)&&(lowercase.length()==1)&&(digits.length()==1))){
-				System.out.println("true");
-			}else {
-				System.out.println("false");
-			
+			}else if(digits.indexOf(c)!=-1) {
+				CountDigits++;
 			}
+		}
+		
+	if(countUpper>=2 && countLower>= 1 && CountDigits >=3) {
+		System.out.println("true");
+	} else {
+		System.out.println("false");
+	}
+			
+		
 		
 	
 		
