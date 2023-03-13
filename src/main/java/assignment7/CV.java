@@ -2,6 +2,17 @@ package assignment7;
 
 public class CV extends Document {
 	
+	public CV(int sno, Document type) {
+		super(sno, type);
+		
+	}
+
+
+
+
+
+
+
 	int sno;
 	String name;
 	String select;
@@ -36,16 +47,8 @@ public class CV extends Document {
     public void setSelect(String select) {
 		this.select = select;
 	}
-
-    public CV(int sno, String name, String select) {
-		super(sno, select);
-		this.sno = sno;
-		this.name = name;
-		this.select = select;
-	}
-
-
-	public static void main(String[] args) {
+    
+    public static void main(String[] args) {
 		
 	}
 
