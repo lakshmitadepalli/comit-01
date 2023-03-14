@@ -228,8 +228,8 @@ public class ExecutePerson {
 		
 		obj3.setName(name1);
 		obj3.generateID();
-		obj3.setAge(age);
-		obj3.setGender(gender);
+		obj3.setAge(age1);
+		obj3.setGender(gender1);
 		obj3.setWeight(weight=0);
 		obj3.setHeight(height=0);
 		
