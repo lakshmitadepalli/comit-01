@@ -1,0 +1,20 @@
+body{
+background: url(https://boomtown-production-consumer-backup.s3.amazonaws.com/17/files/2015/12/Panama-City-Beach-Shoreline.jpg);
+	
+}
+p{
+	color:red;
+}
+h1{
+	color: yellow;
+}
+div{
+	background: white;
+	border: orange;
+	border-width: thick;
+	border-style: solid;
+}
+span{
+	background: orange;
+	color:white;
+}
